@@ -10,21 +10,22 @@ public class Block : MonoBehaviour {
 		GroundGenerator = 0x40,
 	}
 	GameObject cube;
-	Vector3 m;
+	Vector3 axis;
 	private int type;
 	public bool isDestroy;
-	Block(float x, float y, float z, int inputType){
+	public Block(float x, float y, float z, int inputType){
 		type = inputType;
 		isDestroy = (type & (int)BlockOption.BlockNotDestroy) == 1;
-
-	}
-	void Start(){
+		axis = new Vector3(x,y,z);
 		cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-	
-		m = new Vector3(0.0f,0.0f,1.0f);
+		cube.transform.position = axis;
+		cube.transform.localScale = new Vector3 (1, 1, 1);
+	}
+	/*void Start(){
+		
 	}
 	void Update(){
 		//cube.transform.Translate (m);
 
-	}
+	}*/
 }

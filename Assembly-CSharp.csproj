@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\0_Script\Block.cs" />
      <Compile Include="Assets\0_Script\CameraController.cs" />
+     <Compile Include="Assets\0_Script\CreateBlock.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
