@@ -9,21 +9,22 @@ public class Block : MonoBehaviour {
 		GroundTrap = 0x20,
 		GroundGenerator = 0x40,
 	}
-
+	GameObject cube;
+	Vector3 m;
 	private int type;
 	public bool isDestroy;
-	public GameObject thePrefab;
-	private Vector3 m_vPos;
-	private Vector3 m_vAngle;
 	Block(float x, float y, float z, int inputType){
 		type = inputType;
 		isDestroy = (type & (int)BlockOption.BlockNotDestroy) == 1;
 
 	}
 	void Start(){
-		GameObject Instance = (GameObject) Instantiate(thePrefab, m_vPos, m_vAngle );
+		cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+	
+		m = new Vector3(0.0f,0.0f,1.0f);
 	}
 	void Update(){
-		
+		//cube.transform.Translate (m);
+
 	}
 }
