@@ -36,10 +36,9 @@ public class bomb : MonoBehaviour {
 	}
 
 	void fire(){
-		Instantiate (bombfire, transform.position, transform.rotation);
-		Instantiate (bombfire, transform.position, transform.rotation);
-		Instantiate (bombfire, transform.position, transform.rotation);
-		Instantiate (bombfire, transform.position, transform.rotation);
+		for (int i = 0; i < 4; i++) {
+			Instantiate (bombfire, transform.position, Quaternion.Euler (0, 90 * i, 0));
+		}
 	}
 		
 }
