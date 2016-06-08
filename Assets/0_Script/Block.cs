@@ -21,7 +21,7 @@ public class Block : MonoBehaviour {
 
 	}
 	void Start(){
-		GameObject Instance = (GameObject) Instantiate(thePrefab, m_vPos, m_vAngle );
+		//GameObject Instance = (GameObject) Instantiate(thePrefab, m_vPos, m_vAngle );
 	}
 	void Update(){
 		
