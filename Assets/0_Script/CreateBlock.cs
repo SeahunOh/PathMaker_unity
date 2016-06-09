@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CreateBlock : MonoBehaviour {
 	public GameObject user;
+	public GameObject bombItem;
 	Block[,] bl;
 	int[,] stage1_map1 = new int[10,10]{
 		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -46,7 +47,12 @@ public class CreateBlock : MonoBehaviour {
 		userPosition.x += 5;
 		userPosition.y += 1;
 		userPosition.z += 4;
- 		Instantiate (user, transform.position, transform.rotation);
+		Instantiate (user, userPosition, transform.rotation);
+		Vector3 bombItemPosition = transform.position;
+		bombItemPosition.x += 6;
+		bombItemPosition.y += 1;
+		bombItemPosition.z += 4;
+		Instantiate (bombItem, bombItemPosition, transform.rotation);
 	}
 	
 	// Update is called once per frame
