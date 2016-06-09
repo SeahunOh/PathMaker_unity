@@ -8,7 +8,7 @@ public class bombFire : MonoBehaviour {
 	public int damage = 20;
 	// Use this for initialization
 	void Start () {
-		Destroy(gameObject, 10.0f);
+		Destroy(gameObject, 0.5f);
 	}
 
 	// Update is called once per frame
@@ -18,9 +18,11 @@ public class bombFire : MonoBehaviour {
 
 	void OnTriggerEnter(Collider others)
 	{
-		if (others.CompareTag("WALL"))
+		Debug.Log (others.tag);
+
+		if (others.CompareTag("BLOCK"))
 		{
-			Destroy(others);
+			Destroy(others.gameObject);
 			Destroy(gameObject);
 		}
 	}

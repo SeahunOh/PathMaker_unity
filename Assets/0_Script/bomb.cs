@@ -3,6 +3,8 @@ using System.Collections;
 
 public class bomb : MonoBehaviour {
 
+	int[] dx = new int[] {1, 0, -1, 0};
+	int[] dz = new int[] {0, -1, 0, 1};
 	public GameObject bombfire;
 
 	public int range = 1;
@@ -24,20 +26,17 @@ public class bomb : MonoBehaviour {
 			Debug.Log( "Space key was pressed." );
 			startTime = (int)Time.time;
 			isFire = true;
+			Destroy(gameObject, 0.5f);
 			fire ();
-		}
-			
-		if (isFire) {
-			Debug.Log ((int)Time.time - startTime);
-			if ((int)Time.time - startTime> 3) {
-				Destroy (gameObject);
-			}
 		}
 	}
 
 	void fire(){
 		for (int i = 0; i < 4; i++) {
-			Instantiate (bombfire, transform.position, Quaternion.Euler (0, 90 * i, 0));
+			Vector3 bombfirePosition = transform.position;
+			bombfirePosition.x += (float)dx [i] * 0.5f;
+			bombfirePosition.z += (float)dz [i] * 0.5f;
+			Instantiate (bombfire, bombfirePosition, Quaternion.Euler (0, 90 * i, 0));
 		}
 	}
 		

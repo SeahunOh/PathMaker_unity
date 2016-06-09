@@ -15,12 +15,14 @@ public class Block : MonoBehaviour {
 	public bool isDestroy;
 
 	public Block(float x, float y, float z, int inputType){
+		
 		type = inputType;
 		isDestroy = (type & (int)BlockOption.BlockNotDestroy) == 1;
 		axis = new Vector3(x,y,z);
 		cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
 		cube.transform.position = axis;
 		cube.transform.localScale = new Vector3 (1,1,1);
+		cube.tag = "BLOCK";
 	}
 	public GameObject getCube(){
 		return cube;

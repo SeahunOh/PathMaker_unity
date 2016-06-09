@@ -26,6 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 457498}
+  - 114: {fileID: 11447106}
   m_Layer: 0
   m_Name: bomb
   m_TagString: Untagged
@@ -288,6 +289,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186486}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11447106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbf1ed4cb29e4c5cb5da485ebb4b7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombfire: {fileID: 152270, guid: 974de610d6cce4897b83bc6cd8f071c6, type: 2}
+  range: 1
+  isFire: 0
+  startTime: 0
 --- !u!135 &13581754
 SphereCollider:
   m_ObjectHideFlags: 1
