@@ -50,6 +50,7 @@
      <Compile Include="Assets\0_Script\CreateBlock.cs" />
      <Compile Include="Assets\0_Script\bomb.cs" />
      <Compile Include="Assets\0_Script\bombFire.cs" />
+     <Compile Include="Assets\0_Script\bombItem.cs" />
      <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
