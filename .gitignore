@@ -83,3 +83,13 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+*.csproj
+
+*.csproj
+
+Assembly-CSharp.csproj
+
+ProjectSettings/ProjectVersion.txt
+
+*.userprefs
