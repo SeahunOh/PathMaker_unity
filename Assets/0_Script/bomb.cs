@@ -21,13 +21,17 @@ public class bomb : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if( Input.GetKeyDown( KeyCode.Space ) && !isFire){
-			Debug.Log( "Space key was pressed." );
-			startTime = (int)Time.time;
-			isFire = true;
-			Destroy(gameObject, 0.5f);
-			fire ();
+		if (this.transform.position.y > 1.5) {
+			this.transform.Translate (new Vector3 (0, -1, 0));	
+		} else {
+			
+			if (Input.GetKeyDown (KeyCode.Space) && !isFire) {
+				Debug.Log ("Space key was pressed.");
+				startTime = (int)Time.time;
+				isFire = true;
+				Destroy (gameObject, 0.5f);
+				fire ();
+			}
 		}
 	}
 

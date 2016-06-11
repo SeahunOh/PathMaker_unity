@@ -3,13 +3,14 @@ using System.Collections;
 
 public class CreateBlock : MonoBehaviour {
 	public GameObject user;
+	public GameObject bomb1;
 	Block[,] bl;
 	int[,] stage1_map1 = new int[10,10]{
 		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 		{ 0, 1, 1, 1, 0, 0, 1, 1, 1, 0 },
 		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
 		{ 0, 1, 0, 1, 1, 1, 1, 0, 1, 0 },
-		{ 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 },
+		{ 0, 1, 0, 1, 2, 0, 1, 0, 1, 0 },
 		{ 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 },
 		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
 		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
@@ -18,6 +19,7 @@ public class CreateBlock : MonoBehaviour {
 	};
 	// Use this for initialization
 	void Start () {
+		
 		bl = new Block[100, 2];
 		int cnt = 0;
 		for (int i = 0; i < 10; i++) {
@@ -40,17 +42,22 @@ public class CreateBlock : MonoBehaviour {
 					bl[cnt,1] = new Block (x, 1, z, 0);
 					bl[cnt++,1].getCube().GetComponent<Renderer> ().material.color = Color.white;
 				}
+				if (stage1_map1 [i, j] == 2) {
+					float x = (float)i;
+					float z = (float)j;
+					Instantiate (bomb1, new Vector3(i,30,j), transform.rotation);
+					//bomb1.transform.parent = user;
+				}
 			}
 		}
 		Vector3 userPosition = transform.position;
 		userPosition.x += 5;
 		userPosition.y += 1;
 		userPosition.z += 4;
- 		Instantiate (user, transform.position, transform.rotation);
+		Instantiate (user, transform.position, transform.rotation);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }
