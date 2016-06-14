@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{C40C55FB-6C7A-9FC5-C11D-8E06DF7BB4DB}") = "PathMaker_unity", "Assembly-CSharp.csproj", "{DF78BE31-4920-D1DA-7707-F3E1E27B0DA2}"
 EndProject
+Project("{C40C55FB-6C7A-9FC5-C11D-8E06DF7BB4DB}") = "PathMaker_unity", "Assembly-UnityScript.unityproj", "{C29812A7-1765-0EE0-F542-8658686C250E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{DF78BE31-4920-D1DA-7707-F3E1E27B0DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF78BE31-4920-D1DA-7707-F3E1E27B0DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF78BE31-4920-D1DA-7707-F3E1E27B0DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C29812A7-1765-0EE0-F542-8658686C250E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C29812A7-1765-0EE0-F542-8658686C250E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C29812A7-1765-0EE0-F542-8658686C250E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C29812A7-1765-0EE0-F542-8658686C250E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

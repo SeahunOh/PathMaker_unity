@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - BLOCK
+  - USER
+  - BOMB_ITEM
+  - NOT_DEST_BLOCK
   layers:
   - Default
   - TransparentFX
