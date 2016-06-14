@@ -5,10 +5,11 @@ public class CreateBlock : MonoBehaviour {
 	public GameObject user;
 	public GameObject bomb1;
 	public GameObject bombItem;
+	public GameObject destination;
 
 	Block[,] bl;
 	int[,] stage1_map1 = new int[10,10]{
-		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 8 },
 		{ 0, 1, 1, 1, 0, 0, 1, 1, 1, 0 },
 		{ 0, 1, 0, 0, 0, 0, 0, 3, 1, 0 },
 		{ 0, 1, 0, 1, 1, 1, 1, 0, 1, 0 },
@@ -17,7 +18,7 @@ public class CreateBlock : MonoBehaviour {
 		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
 		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
 		{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
-		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+		{ 4, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 	};
 	// Use this for initialization
 	void Start () {
@@ -38,23 +39,20 @@ public class CreateBlock : MonoBehaviour {
 		cnt = 0;
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
-				if (stage1_map1 [i,j] == 1) {
-					float x = (float)i;
-					float z = (float)j;
-					bl[cnt,1] = new Block (x, 1, z, 0);
-					bl[cnt++,1].getCube().GetComponent<Renderer> ().material.color = Color.white;
-				}
-				if (stage1_map1 [i, j] == 2) {
-					float x = (float)i;
-					float z = (float)j;
-					Instantiate (bomb1, new Vector3(i,30,j), transform.rotation);
-					//bomb1.transform.parent = user;
-				}
 				if (stage1_map1 [i, j] == 3) {
 					float x = (float)i;
 					float z = (float)j;
-					Instantiate (bombItem, new Vector3(i,1,j), transform.rotation);
+					Instantiate (bombItem, new Vector3 (i, 0, j), transform.rotation);
 					//bomb1.transform.parent = user;
+				} else if (stage1_map1 [i, j] == 8) {
+					GameObject dest = (GameObject)Instantiate (destination, new Vector3 (i, 0.55f, j), transform.rotation);
+					dest.GetComponent<Renderer> ().material.color = Color.cyan;
+					dest.tag = "DESTINATION";
+				} else if (stage1_map1 [i, j] != 0){
+					float x = (float)i;
+					float z = (float)j;
+					bl[cnt,1] = new Block (x, 1, z, stage1_map1[i,j]);
+					bl[cnt++,1].getCube().GetComponent<Renderer> ().material.color = Color.white;
 				}
 			}
 		}

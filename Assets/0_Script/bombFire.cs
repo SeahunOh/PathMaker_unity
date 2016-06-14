@@ -20,10 +20,12 @@ public class bombFire : MonoBehaviour {
 	{
 		Debug.Log (others.tag);
 
-		if (others.CompareTag("BLOCK"))
-		{
+		if (others.CompareTag ("BLOCK")) {
+			Destroy (others.gameObject);
+			Destroy (gameObject);
+		}
+		else if(others.CompareTag("USER")){
 			Destroy(others.gameObject);
-			Destroy(gameObject);
 		}
 	}
 }

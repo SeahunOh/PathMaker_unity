@@ -42,11 +42,12 @@ public class UserCommand : MonoBehaviour {
 	{
 		Debug.Log (others.tag);
 
-		if (others.CompareTag("BOMB_ITEM"))
-		{
+		if (others.CompareTag ("BOMB_ITEM")) {
 			bombCnt++;
 			Debug.Log ("GET BOMB : " + bombCnt);
-			Destroy(others.gameObject);
+			Destroy (others.gameObject);
+		} else if (others.CompareTag ("DESTINATION")) {
+			Debug.Log ("USER WIN!");
 		}
 	}
 }
