@@ -3,6 +3,7 @@ using System.Collections;
 
 public class UserCommand : MonoBehaviour {
 
+	public int bombCnt = 0;
 	public GameObject bomb;
 	bool fieldInBomb = false;
 	GameObject makeBomb;
@@ -19,13 +20,33 @@ public class UserCommand : MonoBehaviour {
 				fieldInBomb = false;
 			}
 		}
+
+
+
 		else if (Input.GetKeyDown (KeyCode.Space)) {
-			Debug.Log ("Space key was pressed.");
-			Debug.Log ("Create Bomb.");
-			fieldInBomb = true;
-			Vector3 bombPosition = transform.position;
-			bombPosition.y += 0.5f;
-			makeBomb = (GameObject)Instantiate (bomb, bombPosition, transform.rotation);
+			if (bombCnt > 0) {
+				Debug.Log ("Space key was pressed.");
+				fieldInBomb = true;
+				Vector3 bombPosition = transform.position;
+				bombPosition.y += 0.5f;
+				makeBomb = (GameObject)Instantiate (bomb, bombPosition, transform.rotation);
+				bombCnt--;
+				Debug.Log ("Create Bomb : " + bombCnt);
+			} else {
+				Debug.Log ("have not BOMB");
+			}
+		}
+	}
+
+	void OnTriggerEnter(Collider others)
+	{
+		Debug.Log (others.tag);
+
+		if (others.CompareTag("BOMB_ITEM"))
+		{
+			bombCnt++;
+			Debug.Log ("GET BOMB : " + bombCnt);
+			Destroy(others.gameObject);
 		}
 	}
 }

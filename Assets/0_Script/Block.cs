@@ -5,6 +5,7 @@ public class Block : MonoBehaviour {
 	public enum BlockOption{
 		BlockNormal = 0x01,
 		BlockNotDestroy = 0x02,
+		BlockItem = 0x04,
 		GroundNormal = 0x10,
 		GroundTrap = 0x20,
 		GroundGenerator = 0x40,

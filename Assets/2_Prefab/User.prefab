@@ -3568,7 +3568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffeea3ddba5734ae0bc7fd43bab468f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 0}
+  bomb: {fileID: 171128, guid: 17c299fd3cc9e44fdab94e8faaed83a1, type: 2}
 --- !u!114 &11478894
 MonoBehaviour:
   m_ObjectHideFlags: 1

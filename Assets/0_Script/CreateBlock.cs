@@ -10,7 +10,7 @@ public class CreateBlock : MonoBehaviour {
 	int[,] stage1_map1 = new int[10,10]{
 		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 		{ 0, 1, 1, 1, 0, 0, 1, 1, 1, 0 },
-		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
+		{ 0, 1, 0, 0, 0, 0, 0, 3, 1, 0 },
 		{ 0, 1, 0, 1, 1, 1, 1, 0, 1, 0 },
 		{ 0, 1, 0, 1, 2, 0, 1, 0, 1, 0 },
 		{ 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 },
@@ -48,6 +48,12 @@ public class CreateBlock : MonoBehaviour {
 					float x = (float)i;
 					float z = (float)j;
 					Instantiate (bomb1, new Vector3(i,30,j), transform.rotation);
+					//bomb1.transform.parent = user;
+				}
+				if (stage1_map1 [i, j] == 3) {
+					float x = (float)i;
+					float z = (float)j;
+					Instantiate (bombItem, new Vector3(i,1,j), transform.rotation);
 					//bomb1.transform.parent = user;
 				}
 			}

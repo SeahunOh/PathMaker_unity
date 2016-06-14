@@ -10,17 +10,6 @@ public class bombItem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
-
-	void OnTriggerEnter(Collider others)
-	{
-		Debug.Log (others.tag);
-
-		if (others.CompareTag("USER"))
-		{
-			
-			Destroy(gameObject);
-		}
+		transform.Rotate (Vector3.up * Time.deltaTime * 50);
 	}
 }
