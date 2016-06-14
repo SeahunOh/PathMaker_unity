@@ -38,23 +38,22 @@ public class CreateBlock : MonoBehaviour {
 		cnt = 0;
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
-				if (stage1_map1 [i,j] == 1) {
-					float x = (float)i;
-					float z = (float)j;
-					bl[cnt,1] = new Block (x, 1, z, 0);
-					bl[cnt++,1].getCube().GetComponent<Renderer> ().material.color = Color.white;
-				}
 				if (stage1_map1 [i, j] == 2) {
 					float x = (float)i;
 					float z = (float)j;
 					Instantiate (bomb1, new Vector3(i,30,j), transform.rotation);
 					//bomb1.transform.parent = user;
 				}
-				if (stage1_map1 [i, j] == 3) {
+				else if (stage1_map1 [i, j] == 3) {
 					float x = (float)i;
 					float z = (float)j;
-					Instantiate (bombItem, new Vector3(i,1,j), transform.rotation);
+					Instantiate (bombItem, new Vector3 (i, 1, j), transform.rotation);
 					//bomb1.transform.parent = user;
+				} else if (stage1_map1 [i, j] != 0){
+					float x = (float)i;
+					float z = (float)j;
+					bl[cnt,1] = new Block (x, 1, z, stage1_map1[i,j]);
+					bl[cnt++,1].getCube().GetComponent<Renderer> ().material.color = Color.white;
 				}
 			}
 		}
