@@ -48,6 +48,7 @@ public class UserCommand : MonoBehaviour {
 			Destroy (others.gameObject);
 		} else if (others.CompareTag ("DESTINATION")) {
 			Debug.Log ("USER WIN!");
+			Application.LoadLevel ("GameOVer");
 		}
 	}
 }
