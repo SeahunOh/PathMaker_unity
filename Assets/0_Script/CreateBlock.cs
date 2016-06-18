@@ -6,7 +6,9 @@ public class CreateBlock : MonoBehaviour {
 	public GameObject bomb1;
 	public GameObject bombItem;
 	public GameObject destination;
-
+	public GameObject notDestroyBlock;
+	public GameObject GrassBlock;
+	public GameObject DestroyBlock;
 	Block[,] bl;
 	/*
 	 *	0 : empty block 
@@ -36,11 +38,7 @@ public class CreateBlock : MonoBehaviour {
 			for (int j = 0; j < 10; j++) {
 				float x = (float)i;
 				float z = (float)j;
-				bl[cnt,0] = new Block (x, 0, z, 0);
-				if((x+z)%2!=0)
-					bl[cnt++,0].getCube().GetComponent<Renderer> ().material.color = Color.black;
-				else
-					bl[cnt++,0].getCube().GetComponent<Renderer> ().material.color = Color.white;
+				bl[cnt,0] = new Block (x, 0, z, 0, GrassBlock);
 			}
 		}
 		cnt = 0;
@@ -61,10 +59,14 @@ public class CreateBlock : MonoBehaviour {
 					GameObject dest = (GameObject)Instantiate (destination, new Vector3 (i, 0.55f, j), transform.rotation);
 					dest.GetComponent<Renderer> ().material.color = Color.cyan;
 					dest.tag = "DESTINATION";
-				} else if (stage1_map1 [i, j] != 0){
+				} else if (stage1_map1 [i, j] == 2){
 					float x = (float)i;
 					float z = (float)j;
-					bl[cnt,1] = new Block (x, 1, z, stage1_map1[i,j]);
+					bl[cnt,1] = new Block (x, 1, z, stage1_map1[i,j],notDestroyBlock);
+				}else if (stage1_map1 [i, j] == 1){
+					float x = (float)i;
+					float z = (float)j;
+					bl[cnt,1] = new Block (x, 1, z, stage1_map1[i,j],DestroyBlock);
 				}
 			}
 		}
