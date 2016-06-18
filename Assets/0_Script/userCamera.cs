@@ -11,12 +11,14 @@ public class userCamera : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		flag = false;
+		cam_user.enabled = true;
+		cam_top.enabled = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Z)) {
-			if (!flag) {//45 30 45
+			if (!flag) {//
 				flag = true;
 				cam_user.enabled = false;
 				cam_top.enabled = true;

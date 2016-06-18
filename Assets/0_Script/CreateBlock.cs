@@ -13,12 +13,12 @@ public class CreateBlock : MonoBehaviour {
 		{ 0, 1, 1, 1, 0, 0, 1, 1, 1, 0 },
 		{ 0, 1, 0, 0, 0, 0, 0, 3, 1, 0 },
 		{ 0, 1, 0, 1, 1, 1, 1, 0, 1, 0 },
-		{ 0, 1, 0, 1, 2, 0, 1, 0, 1, 0 },
+		{ 0, 1, 0, 1, 2, 4, 1, 0, 1, 0 },
 		{ 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 },
 		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
 		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
 		{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
-		{ 4, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 	};
 	// Use this for initialization
 	void Start () {
@@ -39,7 +39,13 @@ public class CreateBlock : MonoBehaviour {
 		cnt = 0;
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
-				if (stage1_map1 [i, j] == 3) {
+				if (stage1_map1 [i, j] == 4) {
+					GameObject up= GameObject.CreatePrimitive(PrimitiveType.Plane);
+					up.transform.localScale= new Vector3(0.1f, 0.1f, Mathf.Sqrt(2)/10.0f);
+					up.transform.Rotate(45.0f, 90.0f, 0.0f);
+					up.transform.position = new Vector3 (i, 1, j);
+				}
+				else if (stage1_map1 [i, j] == 3) {
 					float x = (float)i;
 					float z = (float)j;
 					Instantiate (bombItem, new Vector3 (i, 0, j), transform.rotation);
