@@ -22,10 +22,6 @@ C:\Users\세훈\Documents\GitHub\PathMaker_unity\obj\Debug\Assembly-CSharp.dll
 C:\Users\세훈\Documents\GitHub\PathMaker_unity\obj\Debug\Assembly-CSharp.pdb
 C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\Assembly-CSharp.pdb
-C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\UnityEditor.dll
-C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\UnityEngine.dll
-C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\UnityEngine.Networking.dll
-C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\UnityEngine.UI.dll
 C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\Mono.Cecil.dll
 C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\Unity.SerializationLogic.dll
 C:\Users\shpik.tokosie\Documents\GitHub\PathMaker_unity\Temp\bin\Debug\Unity.DataContract.dll
