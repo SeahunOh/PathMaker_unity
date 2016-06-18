@@ -26,8 +26,10 @@ public class Block : MonoBehaviour {
 		cube.transform.localScale = new Vector3 (1,1,1);
 		if (type == BlockOption.BlockNormal) {
 			cube.tag = "BLOCK";
+			cube.GetComponent<Renderer> ().material.color = Color.white;
 		} else if (type == BlockOption.BlockNotDestroy) {
 			cube.tag = "NOT_DEST_BLOCK";
+			cube.GetComponent<Renderer> ().material.color = Color.gray;
 		} else if (type == BlockOption.BlockDestination) {
 			cube.tag = "DESTINATION";
 			cube.AddComponent <BoxCollider>();

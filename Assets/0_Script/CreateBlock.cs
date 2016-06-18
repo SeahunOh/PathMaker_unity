@@ -8,17 +8,24 @@ public class CreateBlock : MonoBehaviour {
 	public GameObject destination;
 
 	Block[,] bl;
+	/*
+	 *	0 : empty block 
+	 *  1 : destroy block
+	 *  2 : non destroy block
+	 * 	3 : bomb item
+	 *  8 : destination
+	*/
 	int[,] stage1_map1 = new int[10,10]{
-		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 8 },
-		{ 0, 1, 1, 1, 0, 0, 1, 1, 1, 0 },
-		{ 0, 1, 0, 0, 0, 0, 0, 3, 1, 0 },
-		{ 0, 1, 0, 1, 1, 1, 1, 0, 1, 0 },
-		{ 0, 1, 0, 1, 2, 4, 1, 0, 1, 0 },
-		{ 0, 1, 0, 1, 0, 0, 1, 0, 1, 0 },
-		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
-		{ 0, 1, 0, 0, 0, 0, 0, 0, 1, 0 },
-		{ 0, 1, 1, 1, 1, 1, 1, 1, 1, 0 },
-		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 1, 0, 2, 2, 2, 2, 2, 2, 2, 1 },
+		{ 0, 2, 2, 3, 2, 3, 2, 0, 1, 0 },
+		{ 0, 2, 0, 0, 2, 0, 2, 0, 2, 0 },
+		{ 0, 2, 0, 2, 2, 0, 2, 0, 2, 0 },
+		{ 0, 2, 0, 1, 0, 0, 2, 0, 2, 0 },
+		{ 0, 2, 2, 2, 1, 2, 2, 0, 2, 0 },
+		{ 0, 0, 8, 2, 0, 2, 3, 0, 2, 0 },
+		{ 2, 2, 2, 2, 0, 2, 2, 2, 2, 0 },
+		{ 3, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 	};
 	// Use this for initialization
 	void Start () {
@@ -48,7 +55,7 @@ public class CreateBlock : MonoBehaviour {
 				else if (stage1_map1 [i, j] == 3) {
 					float x = (float)i;
 					float z = (float)j;
-					Instantiate (bombItem, new Vector3 (i, 0, j), transform.rotation);
+					Instantiate (bombItem, new Vector3 (i, 1, j), transform.rotation);
 					//bomb1.transform.parent = user;
 				} else if (stage1_map1 [i, j] == 8) {
 					GameObject dest = (GameObject)Instantiate (destination, new Vector3 (i, 0.55f, j), transform.rotation);
@@ -58,7 +65,6 @@ public class CreateBlock : MonoBehaviour {
 					float x = (float)i;
 					float z = (float)j;
 					bl[cnt,1] = new Block (x, 1, z, stage1_map1[i,j]);
-					bl[cnt++,1].getCube().GetComponent<Renderer> ().material.color = Color.white;
 				}
 			}
 		}
@@ -68,12 +74,6 @@ public class CreateBlock : MonoBehaviour {
 		userPosition.z += 4;
 
 		Instantiate (user, userPosition, transform.rotation);
-		Vector3 bombItemPosition = transform.position;
-		bombItemPosition.x += 6;
-		bombItemPosition.y += 1;
-		bombItemPosition.z += 4;
-		Instantiate (bombItem, bombItemPosition, transform.rotation);
-
 	}
 	
 	// Update is called once per frame
