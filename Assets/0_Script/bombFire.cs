@@ -34,7 +34,7 @@ public class bombFire : MonoBehaviour {
 		else if(others.CompareTag("USER")){
 			Destroy(others.gameObject);
 			Destroy (gameObject);
-			Application.LoadLevel ("GameOVer");
+			Application.LoadLevel ("GameOver");
 		}
 	}
 }
