@@ -48,6 +48,7 @@
      <Compile Include="Assets\0_Script\Block.cs" />
      <Compile Include="Assets\0_Script\CameraController.cs" />
      <Compile Include="Assets\0_Script\CreateBlock.cs" />
+     <Compile Include="Assets\0_Script\CreateBlock2.cs" />
      <Compile Include="Assets\0_Script\UserCommand.cs" />
      <Compile Include="Assets\0_Script\bomb.cs" />
      <Compile Include="Assets\0_Script\bombFire.cs" />
