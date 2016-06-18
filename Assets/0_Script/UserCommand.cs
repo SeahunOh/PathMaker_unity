@@ -7,9 +7,10 @@ public class UserCommand : MonoBehaviour {
 	public GameObject bomb;
 	bool fieldInBomb = false;
 	GameObject makeBomb;
+	private GameManager manager;
 	// Use this for initialization
 	void Start () {
-	
+		manager = GameManager.getInstance;
 	}
 	
 	// Update is called once per frame
@@ -47,8 +48,15 @@ public class UserCommand : MonoBehaviour {
 			Debug.Log ("GET BOMB : " + bombCnt);
 			Destroy (others.gameObject);
 		} else if (others.CompareTag ("DESTINATION")) {
-			Debug.Log ("USER WIN!");
-			Application.LoadLevel ("GameClear");
+			if (manager.stage != 3) {
+				manager.stage++;
+				string nextScene = "Main" + manager.stage.ToString();
+				Application.LoadLevel (nextScene);
+			} else {
+				Debug.Log ("USER WIN!");
+				Application.LoadLevel ("GameClear");
+			}
+
 		}
 	}
 }
