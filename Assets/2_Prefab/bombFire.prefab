@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 100
   damage: 20
+  fireEffect: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 2}
 --- !u!114 &11465708
 MonoBehaviour:
   m_ObjectHideFlags: 1
