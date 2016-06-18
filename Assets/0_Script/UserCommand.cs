@@ -8,6 +8,7 @@ public class UserCommand : MonoBehaviour {
 	bool fieldInBomb = false;
 	GameObject makeBomb;
 	private GameManager manager;
+	public GameObject stageClear;
 	// Use this for initialization
 	void Start () {
 		manager = GameManager.getInstance;
@@ -37,6 +38,9 @@ public class UserCommand : MonoBehaviour {
 				Debug.Log ("have not BOMB");
 			}
 		}
+		if (transform.position.y < -15.0f) {
+			Application.LoadLevel ("GameOver");
+		}
 	}
 
 	void OnTriggerEnter(Collider others)
@@ -48,9 +52,12 @@ public class UserCommand : MonoBehaviour {
 			Debug.Log ("GET BOMB : " + bombCnt);
 			Destroy (others.gameObject);
 		} else if (others.CompareTag ("DESTINATION")) {
+			Debug.Log (manager.stage);
 			if (manager.stage != 3) {
+				Debug.Log ("nextStage");
 				manager.stage++;
-				string nextScene = "Main" + manager.stage.ToString();
+				Debug.Log (manager.stage);
+				string nextScene = "Main" + manager.stage.ToString ();
 				Application.LoadLevel (nextScene);
 			} else {
 				Debug.Log ("USER WIN!");

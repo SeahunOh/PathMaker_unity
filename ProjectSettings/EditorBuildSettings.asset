@@ -13,3 +13,7 @@ EditorBuildSettings:
     path: Assets/1_Scene/GameClear.unity
   - enabled: 1
     path: Assets/1_Scene/GameOver.unity
+  - enabled: 1
+    path: Assets/1_Scene/Main2.unity
+  - enabled: 1
+    path: Assets/1_Scene/Main3.unity
