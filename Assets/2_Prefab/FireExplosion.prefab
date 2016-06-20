@@ -246,7 +246,7 @@ MonoBehaviour:
   StopTime: 0.5
   Duration: 0.35
   ForceAmount: 200
-  ForceRadius: 10
+  ForceRadius: 0
   IsProjectile: 0
   ManualParticleSystems: []
 --- !u!114 &11450062
@@ -261,10 +261,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Seed: 0
-  IntensityModifier: 2
+  IntensityModifier: 0
   IntensityMaxRange:
     Minimum: 0
-    Maximum: 8
+    Maximum: 0
 --- !u!198 &19834194
 ParticleSystem:
   m_ObjectHideFlags: 1
